@@ -1,0 +1,11 @@
+# ======================
+# GMail inbox.
+# ======================
+set from      = "torres.torres@gmail.com"
+set spoolfile = "+personal/Inbox"
+set sendmail  = "/usr/local/bin/msmtp -C $HOME/.mutt/msmtprc -a GMail"
+set signature = $HOME/.mutt/accounts/gmail.signature
+
+# Other special folders.
+set mbox      = "+personal/Inbox"
+set postponed = "+personal/Drafts"

@@ -1,0 +1,11 @@
+# ======================
+# Me inbox.
+# ======================
+set from      = "me@estebantorr.es"
+set spoolfile = "+me/Inbox"
+set sendmail  = "/usr/local/bin/msmtp -C $HOME/.mutt/msmtprc -a me"
+set signature = $HOME/.mutt/accounts/me.signature
+
+# Other special folders.
+set mbox      = "+me/Inbox"
+set postponed = "+me/Drafts"

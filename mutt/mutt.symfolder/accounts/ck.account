@@ -1,0 +1,11 @@
+# ======================
+# CraftKollective inbox.
+# ======================
+set from      = "esteban@craftkollective.com"
+set spoolfile = "+ck/Inbox"
+set sendmail  = "/usr/local/bin/msmtp -C $HOME/.mutt/msmtprc -a ck"
+set signature = $HOME/.mutt/accounts/ck.signature
+
+# Other special folders.
+set mbox      = "+ck/Inbox"
+set postponed = "+ck/drafts"

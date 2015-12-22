@@ -1,0 +1,65 @@
+set realname         = "Esteban Torres"
+set folder           = $HOME/.mail
+set spoolfile        = "+personal/Inbox"
+
+# Mailboxes to show in the sidebar.
+mailboxes •GMail👽 \
+          +personal/Inbox \
+          +personal/Recibos \
+          +personal/Sent \
+          +personal/Drafts \
+          +personal/Archive \
+          +personal/Trash \
+
+mailboxes •Brewbot🍺 \
+          +brewbot/Inbox \
+          +brewbot/Sent \
+          +brewbot/Drafts \
+          +brewbot/Archive \
+          +brewbot/Trash \
+
+mailboxes •Me👷 \
+          +me/Inbox \
+          +me/Sent \
+          +me/Drafts \
+          +me/Archive \
+          +me/Trash \
+
+mailboxes •CocoaHeads🍫 \
+          +cocoaheads/Inbox \
+          +cocoaheads/Sent \
+          +cocoaheads/Drafts \
+          +cocoaheads/Archive \
+          +cocoaheads/Trash \
+
+mailboxes +🍻🍻🍻🍻🍻🍻🍻🍻🍻🍻 \
+
+mailboxes •CraftKollective🍻 \
+          +ck/Inbox \
+          +ck/Sent \
+          +ck/Drafts \
+          +ck/Archive \
+          +ck/Trash \
+
+mailboxes •Services🔧 \
+          +servicesck/Inbox \
+          +servicesck/Sent \
+          +servicesck/Drafts \
+          +servicesck/Archive \
+          +servicesck/Trash \
+
+folder-hook personal/* source ~/.mutt/accounts/gmail.account
+folder-hook brewbot/* source ~/.mutt/accounts/brewbot.account
+folder-hook me/* source ~/.mutt/accounts/me.account
+folder-hook ck/* source ~/.mutt/accounts/ck.account
+folder-hook servicesck/* source ~/.mutt/accounts/servicesck.account
+folder-hook cocoaheads/* source ~/.mutt/accounts/cocoaheads.account
+
+# Paths ----------------------------------------------
+set folder           = ~/.mail              # mailbox location
+set alias_file       = ~/.mutt/alias         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set tmpdir           = ~/.mutt/temp          # where to keep temp files

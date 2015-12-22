@@ -1,0 +1,37 @@
+# ghu, the second alias opens the URL for mailchimp like URLs that require a
+# redirect in order to actually unsubscribe you.
+macro pager ,u \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>/usr/local/bin/ghu<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>" \
+  "Unsubscribe from any email with a List-Unsubscribe header"
+
+macro pager ,o \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>/usr/local/bin/ghu --open<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>" \
+  "Unsubscribe from any email with a List-Unsubscribe header"
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Sync email
+macro index o "<shell-escape>mbsync -aLH<enter><shell-escape>notmuch new<enter>" "run offlineimap to sync inbox"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+# Composing 
+macro compose <esc>1 "<edit-from><kill-line>Esteban Torres <torres.torres@gmail.com><enter>"
+macro compose <esc>2 "<edit-from><kill-line>Esteban Torres <esteban@brewbot.io><enter>"
+macro compose <esc>3 "<edit-from><kill-line>Esteban Torres <me@estebantorr.es><enter>"
+macro compose <esc>4 "<edit-from><kill-line>Esteban Torres <esteban@craftkollective.com><enter>"
+
+set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+# Searching
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+mailboxes = +temporary/search

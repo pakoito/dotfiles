@@ -1,0 +1,11 @@
+# ======================
+# Brewbot inbox.
+# ======================
+set from      = "esteban@brewbot.io"
+set spoolfile = "+brewbot/Inbox"
+set sendmail  = "/usr/local/bin/msmtp -C $HOME/.mutt/msmtprc -a brewbot"
+set signature = $HOME/.mutt/accounts/brewbot.signature
+
+# Other special folders.
+set mbox      = "+brewbot/Inbox"
+set postponed = "+brewbot/Drafts"

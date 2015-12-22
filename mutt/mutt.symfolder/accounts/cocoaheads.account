@@ -1,0 +1,11 @@
+# ======================
+# CocoaHeads inbox.
+# ======================
+set from      = "me@estebantorr.es"
+set spoolfile = "+cocoaheads/Inbox"
+set sendmail  = "/usr/local/bin/msmtp -C $HOME/.mutt/msmtprc -a ch"
+set signature = $HOME/.mutt/accounts/me.signature
+
+# Other special folders.
+set mbox      = "+cocoaheads/Inbox"
+set postponed = "+cocoaheads/Drafts"
