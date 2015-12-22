@@ -1,0 +1,115 @@
+########################################################################
+
+[user]
+	name = Esteban Torres
+  email = me@estebantorr.es
+[github]
+  user = esttorhe
+
+########################################################################
+
+[mergetool]
+	keepBackup = false
+  prompt = false
+[merge "cocoapods"]
+	name = CocoaPods
+	driver = pod install
+[merge "bundler"]
+	name = bundler
+  driver = bundle
+# Driver for merging Xcode project files
+[merge "mergepbx"]
+  name = Xcode project files merger
+  driver = /usr/local/bin/mergepbx %O %A %B
+
+########################################################################
+
+[core]
+	excludesfile = /Users/creegan/.gitignore_global
+  editor = /usr/bin/vim
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
+[diff]
+    tool = Kaleidoscope
+[merge]
+    tool = Kaleidoscope
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+  required = true
+
+########################################################################
+
+[color]
+    ui = auto
+    branch = auto
+    status = auto
+
+# Works well for my green on black terminal
+[color "status"]
+    header = white
+    added = green
+    updated = blue
+    changed = yellow
+    unracked = red
+
+[credential]
+    helper = osxkeychain
+
+[http]
+    # Without this. Git would often have trouble with stupidly large commits (see Twitter for iOS source code).
+    postBuffer = 524288000
+    sslVerify = true
+
+[pack]
+    # Auto detect right number of threads
+    threads = 0
+
+[push]
+    # This is now the default...
+    default = simple
+
+[receive]
+    denyCurrentBranch = updateInstead
+
+[rebase]
+    autosquash = true
+
+[rerere]
+    # Remember and re-apply your git conflict resolutions. This is magic: https://www.kernel.org/pub/software/scm/git/docs/git-rerere.html
+    enabled = true
+
+[status]
+    # Painfully verbose (but vitally important) info about submodules.
+    submodulesummary = true
+
+########################################################################
+
+[alias]
+    cp = cherry-pick
+    deleted = log --diff-filter=D --summary
+    find-sha = branch -avv --contains
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+    ours = checkout --ours --
+    outgoing = log --branches --not --remotes '--format=format:%C(auto,yellow)%h%C(auto,reset) %s %C(auto,blue)%d' --decorate
+    root = rev-parse --show-toplevel
+    score = shortlog --numbered --summary --no-merges
+    status = status -sb
+    subpush = push --recurse-submodules=check
+    sync = fetch origin; rebase origin/master; push origin HEAD:master
+
+    # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
+    subup = submodule update --init --recursive
+    theirs = checkout --theirs --
+
+    report = "log --author=Esteban --format='%Cred%ci%Creset - %Cblue<%an>%Creset %Cgreen%+s%Creset' --no-merges"
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    wtf = !git-wtf
+
+    # From http://git-wt-commit.rubyforge.org
+    wtf = !git-wtf
+[ghi]
+	token = !security find-internet-password -a me@estebantorr.es -s github.com -l 'ghi token' -w
