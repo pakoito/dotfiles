@@ -21,6 +21,9 @@ plugins=(git colorize brew)
 source $ZSH/oh-my-zsh.sh
 DEFAULT_USER=`whoami`
 
+# Configure z plugin
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Aliases
 alias rm="trash"
 alias be="bundle exec"

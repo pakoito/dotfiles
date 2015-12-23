@@ -86,6 +86,7 @@ brew 'xapian'
 brew 'xctool'
 brew 'xvid'
 brew 'xz'
+brew 'z'
 brew 'zsh'
 
 cask 'atom'
