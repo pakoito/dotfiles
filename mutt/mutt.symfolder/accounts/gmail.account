@@ -9,3 +9,6 @@ set signature = $HOME/.mutt/accounts/gmail.signature
 # Other special folders.
 set mbox      = "+personal/Inbox"
 set postponed = "+personal/Drafts"
+
+# Colors
+source $HOME/.mutt/colors/mutt-colors-solarized-dark-256.muttrc

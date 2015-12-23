@@ -9,3 +9,6 @@ set signature = $HOME/.mutt/accounts/me.signature
 # Other special folders.
 set mbox      = "+me/Inbox"
 set postponed = "+me/Drafts"
+
+# Colors
+source $HOME/.mutt/colors/color.muttrc

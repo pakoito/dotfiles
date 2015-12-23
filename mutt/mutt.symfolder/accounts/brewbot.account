@@ -9,3 +9,6 @@ set signature = $HOME/.mutt/accounts/brewbot.signature
 # Other special folders.
 set mbox      = "+brewbot/Inbox"
 set postponed = "+brewbot/Drafts"
+
+# Colors
+source $HOME/.mutt/colors/mutt-colors-solarized-light-256.muttrc
