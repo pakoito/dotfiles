@@ -12,3 +12,5 @@ set postponed = "+brewbot/Drafts"
 
 # Colors
 source $HOME/.mutt/colors/mutt-colors-solarized-light-256.muttrc
+
+# vim: ft=muttrc

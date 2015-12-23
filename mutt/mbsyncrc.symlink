@@ -1,0 +1,415 @@
+############################################################################
+# CRAFTKOLLECTIVE
+############################################################################
+IMAPAccount ck
+# Address to connect to
+Host imap.gmail.com
+User esteban@craftkollective.com
+PassCmd "security find-internet-password -a esteban@craftkollective.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore ck-remote
+Account ck
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore ck-local
+Path ~/.mail/ck/
+Inbox ~/.mail/ck/Inbox
+
+Channel ck-archive
+Master ":ck-remote:[Gmail]/All Mail"
+Slave ":ck-local:Archive"
+Create Both
+SyncState *
+
+Channel ck-inbox
+Master ":ck-remote:INBOX"
+Slave ":ck-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel ck-sent
+Master :ck-remote:"[Gmail]/Sent Mail"
+Slave :ck-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel ck-drafts
+Master :ck-remote:"[Gmail]/Drafts"
+Slave :ck-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel ck-trash
+Master :ck-remote:"[Gmail]/Trash"
+Slave :ck-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group ck
+Channel ck-trash
+Channel ck-archive
+Channel ck-inbox
+Channel ck-sent
+Channel ck-drafts
+
+############################################################################
+# GMail
+############################################################################
+IMAPAccount personal
+# Address to connect to
+Host imap.gmail.com
+User torres.torres@gmail.com
+PassCmd "security find-internet-password -a torres.torres@gmail.com -s imaps.gmail.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore personal-remote
+Account personal
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore personal-local
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/Inbox
+
+Channel personal-archive
+Master ":personal-remote:[Gmail]/All Mail"
+Slave ":personal-local:Archive"
+Create Both
+SyncState *
+
+Channel personal-inbox
+Master ":personal-remote:INBOX"
+Slave ":personal-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel personal-recibos
+Master ":personal-remote:Recibos"
+Slave ":personal-local:Recibos"
+Create Both
+Expunge Both
+SyncState *
+
+Channel personal-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel personal-drafts
+Master :personal-remote:"[Gmail]/Drafts"
+Slave :personal-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel personal-trash
+Master :personal-remote:"[Gmail]/Trash"
+Slave :personal-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group personal
+Channel personal-trash
+Channel personal-archive
+Channel personal-inbox
+Channel personal-recibos
+Channel personal-sent
+Channel personal-drafts
+
+############################################################################
+# Brewbot
+############################################################################
+IMAPAccount brewbot
+# Address to connect to
+Host imap.gmail.com
+User esteban@brewbot.io
+PassCmd "security find-internet-password -a esteban@brewbot.io -s imaps.gmail.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore brewbot-remote
+Account brewbot
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore brewbot-local
+Path ~/.mail/brewbot/
+Inbox ~/.mail/brewbot/Inbox
+
+Channel brewbot-inbox
+Master ":brewbot-remote:INBOX"
+Slave ":brewbot-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel brewbot-archive
+Master ":brewbot-remote:[Gmail]/All Mail"
+Slave ":brewbot-local:Archive"
+Create Both
+SyncState *
+
+Channel brewbot-sent
+Master :brewbot-remote:"[Gmail]/Sent Mail"
+Slave :brewbot-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel brewbot-drafts
+Master :brewbot-remote:"[Gmail]/Drafts"
+Slave :brewbot-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel brewbot-trash
+Master :brewbot-remote:"[Gmail]/Trash"
+Slave :brewbot-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group brewbot
+Channel brewbot-trash
+Channel brewbot-archive
+Channel brewbot-inbox
+Channel brewbot-sent
+Channel brewbot-drafts
+
+############################################################################
+# Me
+############################################################################
+IMAPAccount me
+# Address to connect to
+Host imap.gmail.com
+User me@estebantorr.es
+PassCmd "security find-internet-password -a me@estebantorr.es -s imaps.gmail.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore me-remote
+Account me
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore me-local
+Path ~/.mail/me/
+Inbox ~/.mail/me/Inbox
+
+Channel me-inbox
+Master ":me-remote:INBOX"
+Slave ":me-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel me-archive
+Master ":me-remote:[Gmail]/All Mail"
+Slave ":me-local:Archive"
+Create Both
+SyncState *
+
+Channel me-sent
+Master :me-remote:"[Gmail]/Sent Mail"
+Slave :me-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel me-drafts
+Master :me-remote:"[Gmail]/Drafts"
+Slave :me-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel me-trash
+Master :me-remote:"[Gmail]/Trash"
+Slave :me-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group me
+Channel me-trash
+Channel me-archive
+Channel me-inbox
+Channel me-sent
+Channel me-drafts
+
+############################################################################
+# Cocoaheads
+############################################################################
+IMAPAccount cocoaheads
+# Address to connect to
+Host imap.gmail.com
+User cocoaheads@estebantorr.es
+PassCmd "security find-internet-password -a cocoaheads@estebantorr.es -s imaps.gmail.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore cocoaheads-remote
+Account cocoaheads
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore cocoaheads-local
+Path ~/.mail/cocoaheads/
+Inbox ~/.mail/cocoaheads/Inbox
+
+Channel cocoaheads-inbox
+Master ":cocoaheads-remote:INBOX"
+Slave ":cocoaheads-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel cocoaheads-archive
+Master ":cocoaheads-remote:[Gmail]/All Mail"
+Slave ":cocoaheads-local:Archive"
+Create Both
+SyncState *
+
+Channel cocoaheads-sent
+Master :cocoaheads-remote:"[Gmail]/Sent Mail"
+Slave :cocoaheads-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel cocoaheads-drafts
+Master :cocoaheads-remote:"[Gmail]/Drafts"
+Slave :cocoaheads-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel cocoaheads-trash
+Master :cocoaheads-remote:"[Gmail]/Trash"
+Slave :cocoaheads-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group cocoaheads
+Channel cocoaheads-trash
+Channel cocoaheads-archive
+Channel cocoaheads-inbox
+Channel cocoaheads-sent
+Channel cocoaheads-drafts
+
+############################################################################
+# Service CraftKollective
+############################################################################
+IMAPAccount servicesck
+# Address to connect to
+Host imap.gmail.com
+User services@craftkollective.com
+PassCmd "security find-internet-password -a services@craftkollective.com -s imaps.gmail.com -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile /usr/local/etc/openssl/certs/gmail.crt
+CertificateFile /usr/local/etc/openssl/certs/google.crt
+CertificateFile /usr/local/etc/openssl/certs/Equifax.crt
+
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore servicesck-remote
+Account servicesck
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p Maildir/gmail)
+MaildirStore servicesck-local
+Path ~/.mail/servicesck/
+Inbox ~/.mail/servicesck/Inbox
+
+Channel servicesck-inbox
+Master ":servicesck-remote:INBOX"
+Slave ":servicesck-local:Inbox"
+Create Both
+Expunge Both
+SyncState *
+
+Channel servicesck-archive
+Master ":servicesck-remote:[Gmail]/All Mail"
+Slave ":servicesck-local:Archive"
+Create Both
+SyncState *
+
+Channel servicesck-sent
+Master :servicesck-remote:"[Gmail]/Sent Mail"
+Slave :servicesck-local:Sent
+Create Both
+Expunge Both
+SyncState *
+
+Channel servicesck-drafts
+Master :servicesck-remote:"[Gmail]/Drafts"
+Slave :servicesck-local:Drafts
+Create Both
+Expunge Both
+SyncState *
+
+Channel servicesck-trash
+Master :servicesck-remote:"[Gmail]/Trash"
+Slave :servicesck-local:Trash
+Create Both
+Expunge Both
+SyncState *
+
+
+Group servicesck
+Channel servicesck-trash
+Channel servicesck-archive
+Channel servicesck-inbox
+Channel servicesck-sent
+Channel servicesck-drafts

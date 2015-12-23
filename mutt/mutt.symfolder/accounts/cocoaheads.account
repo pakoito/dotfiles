@@ -12,3 +12,5 @@ set postponed = "+cocoaheads/Drafts"
 
 # Colors
 source $HOME/.mutt/colors/colorful.muttrc
+
+# vim: ft=muttrc

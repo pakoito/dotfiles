@@ -28,3 +28,5 @@ bind index,pager <right>  sidebar-open
 
 # Composing 
 bind compose p postpone-message
+
+# vim: ft=muttrc
