@@ -40,7 +40,7 @@ mailboxes = +temporary/search
 message-hook '(~N|~O) ~f notifications@github\.com' \
   "push '<enter-command>set my_old_pipe_decode=\$pipe_decode \
   nopipe_decode<enter> \
-  <pipe-message>$HOME/.mutt/ghnotification.sh<enter> \
+  <pipe-message>~/.mutt/ghnotification.sh<enter> \
   <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>gg'"
 
 # vim: ft=muttrc
