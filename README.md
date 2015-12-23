@@ -31,17 +31,16 @@ The `.symfolder` extension lets you set a folder with that extension and everyth
 - **topic/\*.symfolder**: Any folder ending in `*.symfolder` get symlinked into
   your `$HOME` inside of that dotfolder. 
   These get symlinked in when you run `script/bootstrap`.
-
-e.g.
-
-```bash
-mutt.symfolder
-﹂accounts
-  ﹂account.account
-﹂msmtprc
-```
-
-This means that everything under `mutt.symfolder` will be symlinked to `~/.mutt/`.
-Probably Holman`s script already works this way but I wanted to have a way to differentiate between files and folder contents.
+  
+  e.g.
+  ```bash
+  mutt.symfolder
+  ﹂accounts
+    ﹂account.account
+  ﹂msmtprc
+  ```
+  
+  This means that everything under `mutt.symfolder` will be symlinked to `~/.mutt/`.
+  Probably Holman`s script already works this way but I wanted to have a way to differentiate between files and folder contents.
 
 [holman]:https://github.com/holman/dotfiles
