@@ -43,4 +43,10 @@ message-hook '(~N|~O) ~f notifications@github\.com' \
   <pipe-message>~/.mutt/ghnotification.sh<enter> \
   <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>gg'"
 
+# Computers are horrible. Instead of just sending only the HTML meme type, this
+# ridiculous website sends a text/plain entry that just says "View this in an
+# HTML email client"
+message-hook '~f no_reply@email\.apple\.com ~s TestFlight:' \
+  "unalternative_order *; alternative_order text/html"
+
 # vim: ft=muttrc
