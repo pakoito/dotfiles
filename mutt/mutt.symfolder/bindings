@@ -29,4 +29,7 @@ bind index,pager <right>  sidebar-open
 # Composing 
 bind compose p postpone-message
 
+# Spam/Ham
+macro index <F3> ";Wo;Wn;simaps://torres.torres:`security find-internet-password -a torres.torres@gmail.com -s imaps.gmail.com -w`@imap.gmail.com:993/[Gmail]/Spam\n" "Train as SPAM"
+
 # vim: ft=muttrc
