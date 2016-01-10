@@ -2,10 +2,9 @@
 #
 # bootstrap installs things.
 
-source shared_functionality
-
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
+source "$DOTFILES_ROOT/script/shared_functionality"
 
 set -e
 
