@@ -99,3 +99,5 @@ link_file () {
     success "linked $1 to $2"
   fi
 }
+
+# vim: ft=sh
