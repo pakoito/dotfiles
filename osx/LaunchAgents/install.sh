@@ -2,8 +2,7 @@
 
 SCRIPT=`realpath $0`
 SCRIPTPATH=`dirname $SCRIPT`
-
-source shared_functionality
+source "$(readlink $SCRIPTPATH/shared_functionality)"
 
 install_launch_agents () {
   info 'installing launch agents'
