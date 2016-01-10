@@ -33,8 +33,8 @@ defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Menu bar: show remaining battery time (on pre–10.8); hide percentage
-defaults write com.apple.menuextra.battery ShowPercent -string “YES”
-defaults write com.apple.menuextra.battery ShowTime -string “NO”
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+defaults write com.apple.menuextra.battery ShowTime -bool true
 
 # Hide Safari's bookmark bar.
 defaults write com.apple.Safari ShowFavoritesBar -bool false
