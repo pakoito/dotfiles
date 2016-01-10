@@ -43,4 +43,11 @@ The `.symfolder` extension lets you set a folder with that extension and everyth
   This means that everything under `mutt.symfolder` will be symlinked to `~/.mutt/`.
   Probably Holman`s script already works this way but I wanted to have a way to differentiate between files and folder contents.
 
+===
+
+After some refactoring I extracted some [`shared_functionality`](script/shared_functionality) to its own script and then I'm must `source`ing it where needed.
+
+e.g.:
+[`LaunchAgents` install script](osx/LaunchAgents/install.sh#L3:L5)
+
 [holman]:https://github.com/holman/dotfiles
