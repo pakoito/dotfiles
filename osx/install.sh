@@ -17,6 +17,9 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+# Finder: Shows all extensions
+defaults write com.apple.finder AppleShowAllExtensions -boolean true
+
 # Set a really fast key repeat.
 defaults write NSGlobalDomain KeyRepeat -int 0
 
@@ -24,13 +27,26 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
 # Run the screensaver if we're in the top-right hot corner.
-defaults write com.apple.dock wvous-bl-corner -int 4
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 5
+defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Top left screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 2
-defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Menu bar: show remaining battery time (on pre–10.8); hide percentage
 defaults write com.apple.menuextra.battery ShowPercent -bool true
@@ -127,5 +143,9 @@ defaults write com.apple.dock showhidden -bool true
 
 # Use google dns
 sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+
+killall Finder
+killall Dock
+killall SystemUIServer
 
 # vim: ft=sh
