@@ -48,7 +48,7 @@ install_dotfolders () {
   info 'installing dotfolders'
 
   local overwrite_all=false backup_all=false skip_all=false
-  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symfolder' -not -path '*.git*')
+  for src in $(find -H "$DOTFILES_ROOT" -maxdepth 4 -name '*.symfolder' -not -path '*.git*')
   do
     dstFldr="$HOME/.$(basename "${src%.*}")"
     # If directory doesn't exist in $HOME lets create it
