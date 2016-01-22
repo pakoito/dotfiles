@@ -10,5 +10,6 @@ alias imapr="$HOME/.mutt/imap_notifier/register.sh"
 alias imapu="$HOME/.mutt/imap_notifier/unregister.sh"
 
 alias zsource="source $HOME/.zshrc"
+alias imaps="imapu; imapr"
 
 # vim: ft=muttrc
