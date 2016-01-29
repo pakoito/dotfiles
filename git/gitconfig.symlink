@@ -99,6 +99,7 @@
     score = shortlog --numbered --summary --no-merges
     status = status -sb
     subpush = push --recurse-submodules=check
+    po = push origin 
     sync = fetch origin; rebase origin/master; push origin HEAD:master
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)

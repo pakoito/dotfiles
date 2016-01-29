@@ -1,7 +1,7 @@
 
 
 # Basic Options --------------------------------------
-set editor = "/Applications/MacDown.app/Contents/MacOS/MacDown"
+set editor = "/usr/local/bin/mvim -f"
 set sig_on_top = yes
 set smtp_authenticators = 'gssapi:login' # Fixes a «No authenticators available» error https://github.com/Homebrew/homebrew/issues/33419
 set wait_key = no        # shut up, mutt
@@ -19,6 +19,7 @@ set thorough_search      # strip headers and eval mimes before searching
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 set send_charset="us-ascii:utf-8"
 set auto_tag = yes                                                  # Automatically delete marked messages when switching boxes
+set text_flowed=yes
 
 # Compose View Options -------------------------------
 set realname = "Esteban Torres"          # who am i?
