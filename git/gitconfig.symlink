@@ -89,6 +89,10 @@
 ########################################################################
 
 [alias]
+    # cleanup merged branches
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|beta' | xargs -n 1 git branch -d"
+    # cleanup merged remote branches
+    cleanupr = "!git fetch --prune ; git branch -r --merged | grep origin | grep -v '>' | grep  -v '\\*\\|master\\|beta' | xargs -L1 | cut -d"/" -f2- | xargs git push origin --delete"
     cp = cherry-pick
     deleted = log --diff-filter=D --summary
     find-sha = branch -avv --contains
@@ -101,6 +105,8 @@
     subpush = push --recurse-submodules=check
     po = push origin 
     sync = fetch origin; rebase origin/master; push origin HEAD:master
+    puf = pull --ff-only
+    pur = pull --ff --rebase
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
     subup = submodule update --init --recursive
