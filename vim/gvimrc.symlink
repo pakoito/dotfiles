@@ -29,7 +29,7 @@ if has("gui_macvim")
 
   set guioptions+=e
 
-  # Taken from Marco Sero's dotfiles https://github.com/MarcoSero/dotfiles/blob/master/.gvimrc
+  " Taken from Marco Sero's dotfiles https://github.com/MarcoSero/dotfiles/blob/master/.gvimrc
   if has("gui_macvim")
     " Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
     " the right side. Ctrl-Shift-Tab goes the other way.
@@ -50,5 +50,3 @@ if has("gui_macvim")
     noremap <D-0> :tablast<CR>
   endif
 endif
-
-#vim: ft=vimrc
