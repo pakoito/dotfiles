@@ -7,6 +7,7 @@ export PATH="/usr/bin/gcov":$PATH
 export PATH="/usr/local/bin/mergepbx":$PATH
 export PATH=$(brew --prefix ruby)/bin:$PATH
 
+export LC_ALL"=en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export EDITOR="atom"
 export TERM=xterm-256color
