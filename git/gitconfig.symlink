@@ -107,6 +107,7 @@
     sync = fetch origin; rebase origin/master; push origin HEAD:master
     puf = pull --ff-only
     pur = pull --ff --rebase
+    puo = push -u origin
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
     subup = submodule update --init --recursive
