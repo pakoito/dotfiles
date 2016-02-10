@@ -1,3 +1,12 @@
+##############################################################################
+# Let's load `Chisel`
+# https://github.com/facebook/chisel
+##############################################################################
+command script import /usr/local/opt/chisel/libexec/fblldb.py
+
+##############################################################################
+# Time to auto import UIKit and Foundation
+##############################################################################
 command alias uikit expr @import UIKit
 command alias foundation expr @import Foundation
 
