@@ -108,6 +108,8 @@
     puf = pull --ff-only
     pur = pull --ff --rebase
     puo = push -u origin
+    # Hide merges from the log
+    log="git log --no-merges --name-only"
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
     subup = submodule update --init --recursive
