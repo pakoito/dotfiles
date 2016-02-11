@@ -109,7 +109,7 @@
     pur = pull --ff --rebase
     puo = push -u origin
     # Hide merges from the log
-    log = log --no-merges --name-only
+    log = log --no-merges --name-status
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
     subup = submodule update --init --recursive
