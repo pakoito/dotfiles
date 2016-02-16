@@ -124,3 +124,6 @@
     wtf = !git-wtf
 [ghi]
 	token = !security find-internet-password -a me@estebantorr.es -s github.com -l 'ghi token' -w
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
