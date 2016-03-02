@@ -4,7 +4,7 @@ ZSH_THEME="agnoster"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git colorize brew)
+plugins=(git colorize brew xcode-completions)
 source $ZSH/oh-my-zsh.sh
 DEFAULT_USER=`whoami`
 

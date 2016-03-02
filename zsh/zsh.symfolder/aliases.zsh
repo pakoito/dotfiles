@@ -9,6 +9,8 @@ alias la='ls -ln'
 alias imapr="$HOME/.mutt/imap_notifier/register.sh"
 alias imapu="$HOME/.mutt/imap_notifier/unregister.sh"
 
+alias swiftc='xcrun -sdk macosx swiftc'
+
 alias zsource="source $HOME/.zshrc"
 alias imaps="imapu; imapr"
 
