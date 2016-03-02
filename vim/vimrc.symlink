@@ -100,22 +100,23 @@ set noswapfile
 set list
 set listchars=tab:>_,trail:.,extends:#,nbsp:.
 
-set rtp+=~/.vim/bundle/Vundle.vim 
-call vundle#begin() 
+" Manage bundles with vim-plu
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim' 
-Plugin 'bling/vim-airline' 
-Plugin 'Gundo'
-Plugin 'vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'Shougo/unite.vim'
-Bundle 'edkolev/tmuxline.vim'
-Bundle 'itchyny/lightline.vim'
-Bundle 'togglecursor'
-Plugin 'git@github.com:Valloric/YouCompleteMe.git'
+Plug 'gmarik/Vundle.vim' 
+Plug 'bling/vim-airline' 
+Plug 'https://github.com/vim-scripts/Gundo.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/unite.vim'
+Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'togglecursor'
+Plug 'https://github.com/Valloric/YouCompleteMe.git'
+Plug 'keith/swift.vim'
 
 filetype plugin on
 filetype plugin indent on     " required! 
@@ -139,7 +140,7 @@ let g:airline_powerline_fonts=1
 let g:Powerline_symbols='fancy' 
 let g:airline#extensions#tmuxline#enabled=1
 
-call vundle#end()            " required 
+call plug#end()            " required 
 
 syntax on
 filetype plugin indent on    " required 
@@ -150,3 +151,4 @@ autocmd vimenter * NERDTree
 " Load podfiles and fastfiles as Ruby
 autocmd BufRead,BufNewFile  Podfile set filetype=ruby
 autocmd BufRead,BufNewFile  Fastfile set filetype=ruby
+
