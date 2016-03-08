@@ -27,6 +27,7 @@ macro compose <esc>1 "<edit-from><kill-line>Esteban Torres <torres.torres@gmail.
 macro compose <esc>2 "<edit-from><kill-line>Esteban Torres <esteban@brewbot.io><enter>"
 macro compose <esc>3 "<edit-from><kill-line>Esteban Torres <me@estebantorr.es><enter>"
 macro compose <esc>4 "<edit-from><kill-line>Esteban Torres <esteban@craftkollective.com><enter>"
+macro compose <esc>5 "<edit-from><kill-line>Esteban Torres <esteban.torres@dnamicworld.com><enter>"
 
 set query_command="contacts '%s'"
 bind editor <Tab> complete-query

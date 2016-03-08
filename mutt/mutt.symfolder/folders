@@ -18,6 +18,13 @@ mailboxes •Brewbot🍺 \
           +brewbot/Archive \
           +brewbot/Trash \
 
+mailboxes •Dnamic🚢 \
+          +dnamic/Inbox \
+          +dnamic/Sent \
+          +dnamic/Drafts \
+          +dnamic/Archive \
+          +dnamic/Trash \
+
 mailboxes •Me👷 \
           +me/Inbox \
           +me/Sent \
@@ -50,6 +57,7 @@ mailboxes •Services🔧 \
 
 folder-hook personal/* source ~/.mutt/accounts/gmail.account
 folder-hook brewbot/* source ~/.mutt/accounts/brewbot.account
+folder-hook dnamic/* source ~/.mutt/accounts/dnamic.account
 folder-hook me/* source ~/.mutt/accounts/me.account
 folder-hook ck/* source ~/.mutt/accounts/ck.account
 folder-hook servicesck/* source ~/.mutt/accounts/servicesck.account

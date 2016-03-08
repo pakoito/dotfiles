@@ -1,0 +1,10 @@
+folders:
+ - Inbox
+user:   'esteban.torres'
+domain: 'dnamicworld.com'
+server: 'imap.gmail.com'
+max: 10
+key_name: 'imaps.gmail.com'
+key_account: 'esteban.torres@dnamicworld.com'
+pid: /tmp/imap_notifier.dnamic.pid  # defaults to /tmp/imap_notifier.pid set this to initialize multiple imap_notifier instances
+ignore_exit_code: true  #defaults to false. When true, returns 0 instead of 1 on existing pidfile exit
