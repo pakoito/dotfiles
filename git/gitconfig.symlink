@@ -3,6 +3,7 @@
 [user]
 	name = Esteban Torres
   email = me@estebantorr.es
+	signingkey = B6595468
 [github]
   user = esttorhe
 

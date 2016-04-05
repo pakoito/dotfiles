@@ -7,6 +7,9 @@ set ttimeoutlen=50
 " Map F5 for Gundo
 nnoremap <F5> :GundoToggle<CR>
 
+" Dash mappings
+:nmap <silent> <leader>d <Plug>DashSearch
+
 " size of a hard tabstop
 set tabstop=2
 " size of an "indent"
@@ -103,6 +106,7 @@ set listchars=tab:>_,trail:.,extends:#,nbsp:.
 " Manage bundles with vim-plu
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-dispatch'
 Plug 'gmarik/Vundle.vim' 
 Plug 'bling/vim-airline' 
 Plug 'https://github.com/vim-scripts/Gundo.git'
@@ -115,8 +119,8 @@ Plug 'Shougo/unite.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'togglecursor'
-Plug 'https://github.com/Valloric/YouCompleteMe.git'
 Plug 'keith/swift.vim'
+Plug 'gfontenot/vim-xcode'
 
 filetype plugin on
 filetype plugin indent on     " required! 
@@ -131,6 +135,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Configures vim-xcode
+let g:xcode_run_command = 'VtrSendCommandToRunner! {cmd}'
   
 let g:airline_detect_paste=1 
 let g:airline#extensions#tabline#enabled=1 
@@ -151,4 +157,7 @@ autocmd vimenter * NERDTree
 " Load podfiles and fastfiles as Ruby
 autocmd BufRead,BufNewFile  Podfile set filetype=ruby
 autocmd BufRead,BufNewFile  Fastfile set filetype=ruby
+
+" Investigate
+let g:investigate_use_dash=1
 

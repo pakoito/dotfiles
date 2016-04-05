@@ -20,4 +20,8 @@ export COCOAPODS_DISABLE_STATS=1
 # HOMEBREW
 export HOMEBREW_EDITOR="mvim"
 
+# FASTLANE
+export FASTLANE_USER="me@estebantorr.es"
+export FASTLANE_PASSWORD="vgUpAFecDG42vWmCMUvVwAFnkARwvwzt"
+
 # vim: ft=muttrc
