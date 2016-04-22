@@ -58,6 +58,9 @@ defaults write com.apple.Safari ShowFavoritesBar -bool false
 # Makes Xcode build with all available CPUs
 defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
 
+# Makes Xcode show build times
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+
 # Changes Screenshot location to ~/Downloads/Screenshots
 if [ ! -d "$HOME/Downloads/Screenshots" ]; then
   mkdir "$HOME/Downloads/Screenshots"
