@@ -130,4 +130,4 @@
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
 	show = diff-so-fancy | less --tabs=1,5 -RFX
 [init]
-	templatedir = ~/.git_templates
+	templatedir = ~/.git_templates/
