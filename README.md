@@ -50,4 +50,9 @@ After some refactoring I extracted some [`shared_functionality`](script/shared_f
 e.g.:
 [`LaunchAgents` install script](osx/LaunchAgents/install.sh#L3:L5)
 
+# Acknowledgments
+* [Zack Holman][holman]
+* [Benedikt Terhechte | Pre-commit hooks][hooks]
+
 [holman]:https://github.com/holman/dotfiles
+[hooks]:http://appventure.me/2016/04/04/prevent-accidental-test-code-commits/
