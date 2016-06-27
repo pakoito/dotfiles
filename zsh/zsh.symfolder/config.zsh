@@ -52,21 +52,15 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 # Based off http://dougblack.io/words/zsh-vi-mode.html
 bindkey -v
 
-function promptConfig() {
+function zle-line-init zle-keymap-select {
   VIM_PROMPT="%{$fg_bold[green]%} [% VI MODE]%  %{$reset_color%}"
   NORMAL_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$NORMAL_PROMPT} $EPS1"
   zle reset-prompt
 }
 
-function zle-keymap-select {
-  promptConfig
-}
-
-zle-line-init() { zle -K vicmd; }
-
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=2
+export KEYTIMEOUT=1
 
 # vim: ft=muttrc
