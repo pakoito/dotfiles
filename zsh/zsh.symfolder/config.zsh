@@ -52,6 +52,12 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 # Based off http://dougblack.io/words/zsh-vi-mode.html
 bindkey -v
 
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word
+
+# ctrl-r starts searching history backward
+bindkey '^r' history-incremental-search-backward
+
 function zle-line-init zle-keymap-select {
   VIM_PROMPT="%{$fg_bold[green]%} [% VI MODE]%  %{$reset_color%}"
   NORMAL_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
