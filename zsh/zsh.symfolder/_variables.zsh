@@ -19,6 +19,8 @@ export COCOAPODS_DISABLE_STATS=1
 
 # HOMEBREW
 export HOMEBREW_EDITOR="mvim"
+# Specify your defaults in this environment variable
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 
 # FASTLANE
 export FASTLANE_USER="me@estebantorr.es"

@@ -14,10 +14,6 @@ DEFAULT_USER=`whoami`
 # Show menu after multiple tabs
 setopt AUTO_MENU
 
-# You know.🎉
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-
 # History settings
 # Save x items to the given history file
 HISTSIZE=10000
@@ -51,5 +47,26 @@ setopt HIST_VERIFY
 # BREW CASK
 # Specify your defaults in this environment variable
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
+# Vi mode
+# Based off http://dougblack.io/words/zsh-vi-mode.html
+bindkey -v
+
+function promptConfig() {
+  VIM_PROMPT="%{$fg_bold[green]%} [% VI MODE]%  %{$reset_color%}"
+  NORMAL_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$NORMAL_PROMPT} $EPS1"
+  zle reset-prompt
+}
+
+function zle-keymap-select {
+  promptConfig
+}
+
+zle-line-init() { zle -K vicmd; }
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=2
 
 # vim: ft=muttrc
