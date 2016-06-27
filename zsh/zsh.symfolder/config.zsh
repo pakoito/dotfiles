@@ -48,4 +48,8 @@ setopt HIST_VERIFY
 # Source nvm
 . $HOME/.nvm/nvm.sh
 
+# BREW CASK
+# Specify your defaults in this environment variable
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
 # vim: ft=muttrc
