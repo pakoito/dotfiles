@@ -16,4 +16,6 @@ alias imaps="imapu; imapr"
 
 alias make=gmake
 
+eval $(thefuck --alias)
+
 # vim: ft=muttrc
