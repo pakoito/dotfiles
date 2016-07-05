@@ -18,4 +18,6 @@ alias make=gmake
 
 eval $(thefuck --alias)
 
+alias flushcache='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+
 # vim: ft=muttrc
