@@ -108,7 +108,9 @@
     po = push origin 
     sync = fetch origin; rebase origin/master; push origin HEAD:master
     puf = pull --ff-only
+    pufo = pull --ff-only origin
     pur = pull --ff --rebase
+    puro = pull --ff --rebase origin
     puo = push -u origin
     # Hide merges from the log
     log = log --no-merges --name-status
