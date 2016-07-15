@@ -147,6 +147,9 @@ defaults write com.apple.dock showhidden -bool true
 # Use google dns
 sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
 
+# Reduces animation of spaces/Exposé to 0
+defaults write com.apple.dock expose-animation-duration -int 0; killall Dock
+
 killall Finder
 killall Dock
 killall SystemUIServer
