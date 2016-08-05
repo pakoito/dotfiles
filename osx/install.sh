@@ -154,4 +154,7 @@ killall Finder
 killall Dock
 killall SystemUIServer
 
+# To stop Xcode from reopening files (storyboards) on launch
+defaults write com.apple.dt.Xcode IDEDisableStateRestoration -bool true
+
 # vim: ft=sh
