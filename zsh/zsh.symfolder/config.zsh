@@ -43,6 +43,8 @@ setopt HIST_VERIFY
 
 # Source nvm
 . $HOME/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
 
 # BREW CASK
 # Specify your defaults in this environment variable
