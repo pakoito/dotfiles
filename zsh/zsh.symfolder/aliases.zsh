@@ -20,4 +20,8 @@ eval $(thefuck --alias)
 
 alias flushcache='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
 
+function brew.info {
+  grep desc $(brew --prefix)/Library/Formula/*.rb | perl -ne 'm{^.*/(.*?)\.rb.*?\"(.*)"$} and print "$1|$2\n"' | column -t -s '|' | fzf --reverse
+}
+
 # vim: ft=muttrc
