@@ -122,6 +122,7 @@ Plug 'togglecursor'
 Plug 'keith/swift.vim'
 Plug 'gfontenot/vim-xcode'
 Plug 'chrisbra/Colorizer'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 filetype plugin on
 filetype plugin indent on     " required! 
