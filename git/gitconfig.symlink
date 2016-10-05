@@ -3,7 +3,7 @@
 [user]
 	name = Esteban Torres
   email = me@estebantorr.es
-	signingkey = B6595468
+  signingkey = 91FD6C347BB21A99 #<= SoundCloud | B6595468 => Home
 [github]
   user = esttorhe
 
@@ -115,7 +115,7 @@
     # Hide merges from the log
     log = log --no-merges --name-status
     undo = checkout --
-    commit = commit -S
+    commit = commit
 
     # This is singlehandedly the most useful alias. If you borrow nothing else from this config, borrow this (and credential.helper)
     subup = submodule update --init --recursive
@@ -149,3 +149,5 @@
 	templatedir = ~/.git_templates/
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg2
