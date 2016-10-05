@@ -2,12 +2,13 @@
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=/usr/local/opt/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="/usr/local/bin":$PATH
-export PATH="/usr/bin/gcov":$PATH
-export PATH="/usr/local/bin/mergepbx":$PATH
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/bin/gcov:$PATH"
+export PATH="/usr/local/bin/mergepbx:$PATH"
 export PATH=$(brew --prefix ruby)/bin:$PATH
-# Swift Toolchain
-export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+
+# Python Powerline
+export PATH=$HOME/Library/Python/2.7/bin:${PATH}
 
 export LC_ALL"=en_US.UTF-8"
 export LANG="en_US.UTF-8"
