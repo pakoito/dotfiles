@@ -7,6 +7,9 @@ export PATH="/usr/bin/gcov:$PATH"
 export PATH="/usr/local/bin/mergepbx:$PATH"
 export PATH=$(brew --prefix ruby)/bin:$PATH
 
+# Ruby exec path
+export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
+
 # Python Powerline
 export PATH=$HOME/Library/Python/2.7/bin:${PATH}
 
@@ -26,5 +29,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 # FASTLANE
 export FASTLANE_USER="me@estebantorr.es"
 export FASTLANE_PASSWORD="vgUpAFecDG42vWmCMUvVwAFnkARwvwzt"
+
+# DOCKER
+export CD_TOOLS_HOME=$HOME/Documents/Tools
+export PATH=$PATH:$CD_TOOLS_HOME
 
 # vim: ft=muttrc
