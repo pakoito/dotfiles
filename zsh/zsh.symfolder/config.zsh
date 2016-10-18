@@ -5,8 +5,8 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git colorize brew xcode-completions)
+#DEFAULT_USER=`whoami`
 source $ZSH/oh-my-zsh.sh
-DEFAULT_USER=`whoami`
 
 # Configure z plugin
 . `brew --prefix`/etc/profile.d/z.sh

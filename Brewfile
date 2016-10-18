@@ -8,7 +8,6 @@ tap 'keith/formulae'
 tap 'px4/px4'
 tap 'sgeb/mutt'
 tap 'thoughtbot/formulae'
-tap 'tldr-pages/tldr'
 tap 'homebrew/dupes'
 
 brew 'appledoc22'
