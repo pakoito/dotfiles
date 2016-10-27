@@ -10,7 +10,7 @@
 ########################################################################
 
 [mergetool]
-	keepBackup = false
+	keepBackup = true
   prompt = false
 [merge "cocoapods"]
 	name = CocoaPods
